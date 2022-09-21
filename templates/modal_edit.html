@@ -1,0 +1,30 @@
+<div class="modal fade" id="modal_edit_budget_{{budget.id}}" tabindex="-1" aria-labelledby="edit_budget_label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="edit_budget_label">Edit budget</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{url_for('update', budget_id=budget.id)}}" method="POST">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Type</label>
+                        <input type="text" class="form-control" name="type" value="{{budget.type}}">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Detail</label>
+                        <input type="text" class="form-control" name="detail" value="{{budget.detail}}">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Amount</label>
+                        <input type="number" class="form-control" name="amount" value="{{budget.amount}}">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
